@@ -752,6 +752,103 @@
             </div>
         </div>
 
+        <!-- Fig 3a Slide -->
+        <div class="slide">
+            <div class="slide-counter">16/22</div>
+            <h2>Survey Response Correlations</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image7.png" alt="Figure 3a" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                    <div class="figure-caption"><strong>Fig 3a:</strong> Correlations among survey responses for questions that measure related but distinct sleep outcomes from the PROMIS Sleep Disturbance and Sleep Impairment surveys</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fig 3b Slide -->
+        <div class="slide">
+            <div class="slide-counter">17/22</div>
+            <h2>Sensor Feature Importance</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image8.png" alt="Figure 3b" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                    <div class="figure-caption"><strong>Fig 3b:</strong> Feature importance for sensor features predicting survey responses in a linear regression model. The top two predictors for each survey question, measured based on the magnitude of the regression coefficient, are annotated with '*'</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fig 3c Slide -->
+        <div class="slide">
+            <div class="slide-counter">18/22</div>
+            <h2>AUROC Performance Comparison</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image9.png" alt="Figure 3c" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                    <div class="figure-caption"><strong>Fig 3c:</strong> AUROC for the performance of PH-LLM with adapter, zero-shot and few-shot prompting approaches when predicting binary outcomes derived from survey responses in the test set (n = 833). The dashed vertical line denotes the AUROC of the random predictor</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fig 3d Slide -->
+        <div class="slide">
+            <div class="slide-counter">19/22</div>
+            <h2>AUPRC Performance Comparison</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image10.png" alt="Figure 3d" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                    <div class="figure-caption"><strong>Fig 3d:</strong> AUPRC for the performance of PH-LLM with adapter, zero-shot and few-shot prompting approaches when predicting binary outcomes derived from survey responses in the test set (n = 833). Outcome-specific prevalence bars are added to show the AUPRC of the random predictor</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Figure 3 Detailed Analysis -->
+        <div class="slide">
+            <div class="slide-counter">20/22</div>
+            <h2>Figure 3: Predictive Performance Analysis</h2>
+            <div class="content">
+                <div class="highlight-box">
+                    <h3>📊 Survey Correlation & Feature Analysis</h3>
+                    <p><strong>Parts A & B:</strong> Survey responses show correlations among related but distinct sleep outcomes from PROMIS Sleep Disturbance and Sleep Impairment surveys. Feature importance analysis reveals the top sensor predictors for each survey question based on regression coefficient magnitude (marked with '*').</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>📈 Performance Metrics Comparison</h3>
+                    <p><strong>Parts C & D:</strong> Both AUROC and AUPRC metrics demonstrate PH-LLM with adapter significantly outperforming zero-shot and few-shot approaches. Data presented as mean values over 100 bootstrapping iterations with 95% confidence intervals. Statistically significant improvements (confidence intervals excluding 0 in paired bootstrapping) are marked with '*'.</p>
+                </div>
+
+                <h3>Key Technical Details</h3>
+                <ul>
+                    <li>Test set: n = 833 survey responses</li>
+                    <li>Dashed vertical line in AUROC shows random predictor performance</li>
+                    <li>AUPRC includes outcome-specific prevalence bars for random baseline</li>
+                    <li>Survey response mappings available in Supplementary Tables 39 and 40</li>
+                    <li>SI: Sleep Impairment abbreviation used throughout</li>
+                    <li>Statistical significance determined by 100 paired bootstrapping iterations</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Supplementary Figure A Slide -->
+        <div class="slide">
+            <div class="slide-counter">21/22</div>
+            <h2>Supplementary Figure A</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image11.png" alt="Supplementary Figure A" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Supplementary Figure B Slide -->
+        <div class="slide">
+            <div class="slide-counter">22/22</div>
+            <h2>Supplementary Figure B</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image12.png" alt="Supplementary Figure B" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
         <!-- Slide 10: Limitations & Considerations -->
         <div class="slide">
             <div class="slide-counter">17/20</div>
