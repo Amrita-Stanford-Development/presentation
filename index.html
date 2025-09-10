@@ -272,6 +272,25 @@
             font-size: 0.9rem;
         }
 
+        .figure-container {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .figure-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .figure-caption {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
         @media (max-width: 768px) {
             .two-column {
                 grid-template-columns: 1fr;
@@ -578,94 +597,169 @@
             </div>
         </div>
 
-        <!-- Slide 8: Coaching Results -->
+        <!-- Slide 8: PH-LLM Workflow -->
         <div class="slide">
-            <div class="slide-counter">8/11</div>
-            <h2>Results: Personalized Coaching</h2>
+            <div class="slide-counter">8/20</div>
+            <h2>PH-LLM Workflow Architecture</h2>
             <div class="content">
-                <div class="two-column">
-                    <div>
-                        <h3>Sleep Domain</h3>
-                        <div class="metric-card">
-                            <span class="metric-number">~4/5</span>
-                            <div class="metric-label">Mean Quality Rating</div>
-                        </div>
-                        <ul>
-                            <li>Better insights vs. base Gemini (p≈6.6×10⁻⁷)</li>
-                            <li>Improved etiologies (p≈2.5×10⁻³)</li>
-                            <li>High recommendation quality</li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3>Fitness Domain</h3>
-                        <div class="metric-card">
-                            <span class="metric-number">3/4</span>
-                            <div class="metric-label">Areas Matching Experts</div>
-                        </div>
-                        <ul>
-                            <li>On par with human trainers</li>
-                            <li>Equal readiness assessment</li>
-                            <li>Comparable health metrics analysis</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <h3>🎯 Effective Personalization Examples</h3>
-                    <p>PH-LLM successfully identified individual patterns and provided tailored recommendations, such as suggesting "cool, dark bedroom" for users with specific sleep disruption patterns in their data.</p>
+                <div class="figure-container">
+                    <img src="image1.png" alt="PH-LLM Workflow Diagram" onclick="openFullscreen(this)" style="cursor: pointer;">
+                    <div class="figure-caption"><strong>Fig 1a:</strong> PH-LLM workflow showing integration of sensor data, professional examinations, and personalized coaching outputs</div>
                 </div>
             </div>
         </div>
 
-        <!-- Slide 9: Predictive Performance -->
+        <!-- Slide 9: Sleep Case Study Example -->
         <div class="slide">
-            <div class="slide-counter">9/11</div>
-            <h2>Results: Predictive Performance</h2>
+            <div class="slide-counter">9/20</div>
+            <h2>Sleep Case Study Analysis</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image2.png" alt="Sleep Case Study Analysis" onclick="openFullscreen(this)" style="cursor: pointer;">
+                    <div class="figure-caption"><strong>Fig 2b:</strong> Example sleep case study with longitudinal bedtime/wake patterns and sleep stage analysis for personalized coaching</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen Modal -->
+        <div id="fullscreenModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9);" onclick="closeFullscreen()">
+            <img id="fullscreenImage" style="margin: auto; display: block; width: auto; height: auto; max-width: 95%; max-height: 95%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border-radius: 8px;">
+            <span onclick="closeFullscreen()" style="position: absolute; top: 15px; right: 35px; color: white; font-size: 40px; font-weight: bold; cursor: pointer;">&times;</span>
+        </div>
+
+        <!-- Figure 1 Detailed Analysis -->
+        <div class="slide">
+            <div class="slide-counter">10/20</div>
+            <h2>Figure 1: Study Design & Performance Overview</h2>
             <div class="content">
                 <div class="highlight-box">
-                    <h3>Digital Wellbeing Study Dataset</h3>
-                    <p>4,163 users with ≥15 days of 20-feature daily metrics, predicting 16 PROMIS sleep survey outcomes</p>
+                    <h3>📋 Part A: Experimental Design</h3>
+                    <p><strong>Schematic showing the overall experiment design of the study.</strong> PH-LLM was evaluated on three aspects of personal health: (1) assessing its level of expert knowledge based on certification examination-style MCQs; (2) generating personalized insights and recommendations for user goals in the sleep and fitness domains; and (3) predicting PROs for sleep quality from aggregated daily-resolution numerical sensor data.</p>
                 </div>
 
-                <div class="results-grid">
-                    <div class="metric-card">
-                        <span class="metric-number">0.75-0.80</span>
-                        <div class="metric-label">Mean AUROC Range</div>
-                        <div style="font-size: 0.8rem; color: #27ae60; margin-top: 6px;">vs. ~0.65 zero-shot</div>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <span class="metric-number">✓</span>
-                        <div class="metric-label">Statistical Significance</div>
-                        <div style="font-size: 0.8rem; color: #27ae60; margin-top: 6px;">100× bootstrap confirmed</div>
-                    </div>
-                    
-                    <div class="metric-card">
-                        <span class="metric-number">≈</span>
-                        <div class="metric-label">Traditional ML</div>
-                        <div style="font-size: 0.8rem; color: #3498db; margin-top: 6px;">Matched logistic regression</div>
-                    </div>
+                <div class="highlight-box">
+                    <h3>📊 Part B: Performance Results</h3>
+                    <p><strong>Performance of PH-LLM, as contextualized with the responses of human experts,</strong> for professional examinations, coaching recommendations and PROs for sleep quality. Data are presented as mean accuracy (<em>n</em> = 629 sleep questions and <em>n</em> = 99 fitness examination questions), mean human expert rating (<em>n</em> = 4,265 sleep and <em>n</em> = 5,049 fitness case study ratings across principles and subsections from PH-LLM and <em>n</em> = 2,606 and <em>n</em> = 3,335 from human experts) and AUROC (<em>n</em> = 833 survey responses) bootstrapped over 1,000, 1,000 and 100 iterations, respectively.</p>
                 </div>
 
-                <h3>Key Findings</h3>
+                <h3>Statistical Significance</h3>
                 <ul>
-                    <li><strong>Adapter Success:</strong> MLP significantly outperformed prompt-only baselines</li>
-                    <li><strong>Realistic Expectations:</strong> Modest gains reflect partial sensor capture of subjective experience</li>
-                    <li><strong>Consistent Improvements:</strong> Benefits across nearly all sleep outcome measures</li>
-                    <li><strong>Clinical Relevance:</strong> Performance suitable for real-world health applications</li>
+                    <li>Error bars represent 95% confidence intervals</li>
+                    <li>'*' indicates statistically significant difference between groups</li>
+                    <li>Two-sided <em>t</em>-test for examinations (<em>P</em> = 1.52 × 10⁻¹⁰ for fitness)</li>
+                    <li>Two-sided Wilcoxon rank-sum test for ratings (<em>P</em> = 3.31 × 10⁻¹¹ for sleep)</li>
+                    <li>'Naive performance' achieved by random classifier</li>
+                    <li>HR: heart rate; HRV: heart rate variability</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Fig 2a Slide -->
+        <div class="slide">
+            <div class="slide-counter">11/20</div>
+            <h2>Sleep Case Study: Wearable Data Input & Expert Analysis</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image3.png" alt="Figure 2a" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 60vh; width: auto; object-fit: contain;">
+                    <div class="figure-caption"><strong>Fig 2a:</strong> Visual depiction of wearable sensor data used as input and corresponding expert analysis for improving sleep quality</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sleep Case Study Example (Fig 2b) -->
+        <div class="slide">
+            <div class="slide-counter">12/20</div>
+            <h2>Sleep Case Study: Longitudinal Pattern Analysis</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image4.png" alt="Sleep Case Study Analysis" onclick="openFullscreen(this)" style="cursor: pointer; max-height: 45vh; width: auto; object-fit: contain;">
+                    <div class="figure-caption"><strong>Fig 2b:</strong> Example sleep case study with longitudinal bedtime/wake patterns and sleep stage analysis for personalized coaching</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fig 2c Slide -->
+        <div class="slide">
+            <div class="slide-counter">13/20</div>
+            <h2>Sleep Domain: Expert Rating Comparisons</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image5.png" alt="Figure 2c" onclick="openFullscreen(this)" style="cursor: pointer;">
+                    <div class="figure-caption"><strong>Fig 2c:</strong> Mean expert ratings for sleep case study responses comparing Gemini Ultra 1.0, PH-LLM and human experts</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fig 2d Slide -->
+        <div class="slide">
+            <div class="slide-counter">14/20</div>
+            <h2>Fitness Domain: Expert Rating Comparisons</h2>
+            <div class="content">
+                <div class="figure-container">
+                    <img src="image6.png" alt="Figure 2d" onclick="openFullscreen(this)" style="cursor: pointer;">
+                    <div class="figure-caption"><strong>Fig 2d:</strong> Mean expert ratings for fitness case study responses comparing Gemini Ultra 1.0, PH-LLM and human experts</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Figure 2 Analysis - Part 1 -->
+        <div class="slide">
+            <div class="slide-counter">15/20</div>
+            <h2>Figure 2 Analysis: Data Input & Expert Structure</h2>
+            <div class="content">
+                <div class="highlight-box">
+                    <h3>📱 Parts A & B: Wearable Sensor Input & Expert Analysis</h3>
+                    <p><strong>Visual depiction of wearable sensor data used as input and corresponding expert analysis and recommendations</strong> for improving sleep quality (<strong>a</strong>) and for assessing workout readiness and fitness (<strong>b</strong>). For each case study, the experts considered demographic information and wearable sensor data for a period of up to 30 days over which the device was worn (sections (i)–(iii) of <strong>a</strong> and <strong>b</strong>).</p>
+                </div>
+
+                <div class="highlight-box">
+                    <h3>🔬 Expert Response Structure</h3>
+                    <p>Both human experts and PH-LLM used these inputs to create domain-specific responses: <strong>sleep case studies</strong> contained subsections for insights, possible etiologies and recommendations, and <strong>fitness case studies</strong> contained subsections for training load, sleep, health metrics, readiness assessment and recommendations. Abridged examples of human expert responses are shown in sections (iv) of <strong>a</strong> and <strong>b</strong>.</p>
+                </div>
+
+                <h3>Data Sources</h3>
+                <ul>
+                    <li>For all metrics considered, see Supplementary Tables 26 and 27 for sleep data</li>
+                    <li>Supplementary Tables 28–36 for fitness data</li>
+                    <li>Up to 30 days of continuous wearable sensor monitoring</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Figure 2 Analysis - Part 2 -->
+        <div class="slide">
+            <div class="slide-counter">16/20</div>
+            <h2>Figure 2 Analysis: Performance Comparisons</h2>
+            <div class="content">
+                <div class="highlight-box">
+                    <h3>📊 Parts C & D: Performance Comparisons</h3>
+                    <p><strong>Mean expert ratings across all subsection principles</strong> for case study responses generated by Gemini Ultra 1.0, PH-LLM and human experts in the sleep (<strong>c</strong>) and fitness (<strong>d</strong>) domains. Error bars represent 95% confidence intervals bootstrapped over 1,000 iterations. '*' indicates a statistically significant difference (<em>P</em> < 0.05) between two response types using the two-sided Wilcoxon rank-sum test and multiple hypothesis testing correction.</p>
+                </div>
+
+                <h3>Statistical Analysis Details</h3>
+                <ul>
+                    <li>Within each bar, <em>n</em> denotes number of principle ratings per conversation source</li>
+                    <li>Circles show proportion of scores at a given Likert rating</li>
+                    <li>95% confidence intervals bootstrapped over 1,000 iterations</li>
+                    <li>Two-sided Wilcoxon rank-sum test with multiple hypothesis testing correction</li>
+                </ul>
+
+                <h3>Abbreviations</h3>
+                <ul>
+                    <li>bpm: beats per minute; brpm: breaths per minute; hh: hours</li>
+                    <li>HR: heart rate; HRV RMSSD: heart rate variability root mean square of successive differences; mm: minutes</li>
                 </ul>
             </div>
         </div>
 
         <!-- Slide 10: Limitations & Considerations -->
         <div class="slide">
-            <div class="slide-counter">10/11</div>
+            <div class="slide-counter">17/20</div>
             <h2>Limitations & Considerations</h2>
             <div class="content">
                 <div class="two-column">
                     <div>
-                        <h3>⚠ Current Limitations</h3>
+                        <h3>⚠️ Current Limitations</h3>
                         <ul>
                             <li>Subjective evaluation bias in human ratings</li>
                             <li>Limited demographic representation</li>
@@ -688,7 +782,7 @@
                 </div>
 
                 <div class="highlight-box">
-                    <h3>🛡 Safety & Ethics</h3>
+                    <h3>🛡️ Safety & Ethics</h3>
                     <p>All health AI systems require rigorous testing for safety, bias, and clinical appropriateness before deployment. PH-LLM represents a research prototype demonstrating feasibility, not a clinical tool.</p>
                 </div>
 
@@ -701,9 +795,9 @@
             </div>
         </div>
 
-        <!-- Slide 11: Conclusions & Future Directions -->
+        <!-- Slide 13: Conclusions & Future Directions -->
         <div class="slide">
-            <div class="slide-counter">11/11</div>
+            <div class="slide-counter">18/20</div>
             <h2>Conclusions & Future Directions</h2>
             <div class="content">
                 <div class="two-column">
@@ -811,6 +905,25 @@
             }
             
             startX = null;
+        });
+
+        function openFullscreen(img) {
+            const modal = document.getElementById("fullscreenModal");
+            const fullscreenImg = document.getElementById("fullscreenImage");
+            modal.style.display = "block";
+            fullscreenImg.src = img.src;
+            fullscreenImg.alt = img.alt;
+        }
+
+        function closeFullscreen() {
+            document.getElementById("fullscreenModal").style.display = "none";
+        }
+
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeFullscreen();
+            }
         });
     </script>
 </body>
